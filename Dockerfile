@@ -1,6 +1,6 @@
 # This is an example dockerfile for a potassium project
 
-FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
+FROM pytorch/pytorch:2.1.1-cuda12.1-cudnn8-runtime
 
 WORKDIR /
 

@@ -4,8 +4,11 @@ const pipeline = require('stream').pipeline;
 
 const options = {
  'method': 'POST',
- 'url': 'http://localhost:8000',
- 'headers': { 'Content-Type': 'application/json' },
+ 'url': 'YOUR_PROJECT_URL',
+ 'headers': { 
+  'Content-Type': 'application/json',
+  'X-Banana-API-Key': 'YOUR_API_KEY'
+},
  body: JSON.stringify({ "prompt": "what is your favourite color: ", "fast": true })
 };
 

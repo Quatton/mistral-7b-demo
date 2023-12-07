@@ -12,7 +12,6 @@ app = Potassium("my_app")
 class Context(TypedDict):
     model: AutoModelForCausalLM
     tokenizer: AutoTokenizer
-    streamer: TextIteratorStreamer
 
 # @app.init runs at startup, and loads models into the app's context
 @app.init
@@ -30,7 +29,7 @@ def init():
 
 # @app.handler runs for every call
 @app.handler("/")
-def handler(context: dict, request: Request) -> Response:
+def handler(context: Context, request: Request) -> Response:
     prompt = request.json.get("prompt")
     model = context["model"]
     tokenizer = context["tokenizer"]
